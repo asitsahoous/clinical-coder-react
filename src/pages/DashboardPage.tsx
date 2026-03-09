@@ -119,7 +119,7 @@ export function DashboardPage() {
               <BarChart data={dashboardMetrics.topCodes.slice(0, 5)} layout="vertical">
                 <XAxis type="number" hide />
                 <YAxis type="category" dataKey="code" width={60} tick={{ fontSize: 11 }} />
-                <Tooltip formatter={(value: number, _name: string, props: { payload: { desc: string } }) => [value, props.payload.desc]} />
+                <Tooltip formatter={(value, _name, props) => [value, props.payload.desc]} />
                 <Bar dataKey="count" fill="#3b82f6" radius={[0, 4, 4, 0]} />
               </BarChart>
             </ResponsiveContainer>
